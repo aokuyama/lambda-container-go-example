@@ -7,6 +7,8 @@ services:
       dockerfile: ./dev.dockerfile
     volumes:
       - ./app:/app
+      - ./entry.sh:/entry.sh
+      - ./testrun.sh:/testrun.sh
     working_dir: /app
     ports:
         - ${DEV_PORT-9000}:8080
