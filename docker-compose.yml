@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  dev:
+    container_name: lambda-go
+    build:
+      context: .
+      dockerfile: ./dev.dockerfile
+    volumes:
+      - ./app:/app
+    working_dir: /app
+    ports:
+        - ${DEV_PORT-9000}:8080
+    entrypoint: /bin/sh
+    tty: true
